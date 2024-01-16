@@ -1,0 +1,32 @@
+{
+    "idSave": 51,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "chestPrice": 270,
+    "chestsOpened": 17,
+    "entities": [
+        {
+            "Key": "green_gorgon",
+            "Level": 1,
+            "Cards": 26
+        },
+        {
+            "Key": "purple_gorgon",
+            "Level": 1,
+            "Cards": 8
+        },
+        {
+            "Key": "magenta_gorgon",
+            "Level": 1,
+            "Cards": 2
+        }
+    ],
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ]
+}

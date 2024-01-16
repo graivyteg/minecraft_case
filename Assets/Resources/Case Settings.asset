@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c30ab6185a4ee286ae475b75c939f9, type: 3}
+  m_Name: Case Settings
+  m_EditorClassIdentifier: 
+  FrequencySettings:
+  - Rarity: 0
+    Frequency: 30
+  - Rarity: 1
+    Frequency: 12
+  - Rarity: 2
+    Frequency: 5
+  - Rarity: 3
+    Frequency: 3
+  CardPrefabs:
+  - Rarity: 0
+    Prefab: {fileID: 4591583091083297248, guid: abfda028363084cc587a2027115c63fc, type: 3}
+  - Rarity: 1
+    Prefab: {fileID: 6446543955800295836, guid: cea287cdf42944a848e5bfac9862710e, type: 3}
+  - Rarity: 2
+    Prefab: {fileID: 7330117515442516449, guid: bbe7c6e5c78a746f6bede2afc1be7f58, type: 3}
+  - Rarity: 3
+    Prefab: {fileID: 8210425848034074339, guid: 2c3cd633c41b344ab8c1814101c2dbfb, type: 3}
