@@ -102,4 +102,14 @@ public class Entity : MonoBehaviour
         NavMesh.SamplePosition(randomDirection, out hit, _walkRadius, 1);
         return hit.position;
     }
+    
+    public int GetUpgradePrice()
+    {
+        return Data.FirstUpgradePrice * Mathf.RoundToInt(Mathf.Pow(2, LevelData.Level - 1));
+    }
+
+    public int GetDamage()
+    {
+        return Data.DefaultDamage + Data.DamagePerLevel * (LevelData.Level - 1);
+    }
 }

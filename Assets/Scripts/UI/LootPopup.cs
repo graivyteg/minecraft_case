@@ -66,8 +66,8 @@ namespace UI
             
             var levelData = _entityManager.GetEntity(_currentData.Key).LevelData;
             var amount = _isDoubled ? _currentAmount * 2 : _currentAmount; 
-            _amountText.text = $"+{amount} ({levelData.Cards}/{EntityUtil.LevelCardsAmount(levelData)})";
-            bool canUpgrade = EntityUtil.CanUpgrade(levelData);
+            _amountText.text = $"+{amount} ({levelData.Cards}/{levelData.LevelCardsAmount()})";
+            bool canUpgrade = levelData.CanUpgrade();
             _upgradeText.gameObject.SetActive(canUpgrade);
 
             _isDoubled = false;

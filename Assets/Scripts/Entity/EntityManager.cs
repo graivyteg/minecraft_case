@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using NaughtyAttributes;
+using UI;
 using UnityEngine;
 using YG;
 using Zenject;
@@ -8,7 +10,17 @@ using Random = UnityEngine.Random;
 
 public class EntityManager : MonoYandex
 {
+    [Inject] private Player _player;
     [Inject] private ChestOpener _chestOpener;
+
+    [BoxGroup("Scene Dependent Settings")] 
+    [SerializeField] private bool _addInfoButton;
+    [BoxGroup("Scene Dependent Settings")] 
+    [EnableIf(nameof(_addInfoButton))] 
+    [SerializeField] private EntityInfoButton _infoButtonPrefab;
+    [BoxGroup("Scene Dependent Settings")] 
+    [EnableIf(nameof(_addInfoButton))] 
+    [SerializeField] private EntityInfoPopup _infoPopup;
     
     [SerializeField] private List<Transform> _spawnpoints;
     
@@ -17,6 +29,7 @@ public class EntityManager : MonoYandex
     private List<Entity> _entities = new();
 
     public Action<string, int> OnCardsAdded;
+    public Action<string> OnLevelUpgraded;
     
     private void Awake()
     {
@@ -47,6 +60,11 @@ public class EntityManager : MonoYandex
     {
         var prefab = entityData.Prefab;
         var obj = Instantiate(prefab);
+        if (_addInfoButton)
+        {
+            var button = Instantiate(_infoButtonPrefab, obj.transform);
+            button.Initialize(_infoPopup);
+        }
         obj.transform.position = GetSpawnPosition();
         var entity = obj.GetComponent<Entity>();
         _entities.Add(entity);
@@ -55,6 +73,19 @@ public class EntityManager : MonoYandex
         return entity;
     }
 
+    private Vector3 GetSpawnPosition()
+    {
+        var randomValue = Random.Range(0, _spawnpoints.Count - 1);
+        if (randomValue >= _lastSpawnpoint) randomValue++;
+
+        return _spawnpoints[randomValue].position;
+    }
+
+    private void OnChestOpened(EntityData data, int amount)
+    {
+        AddCards(data.Key, amount);
+    }
+    
     public void AddCards(string key, int amount)
     {
         var index = EntityUtil.GetSaveIndex(key);
@@ -72,17 +103,18 @@ public class EntityManager : MonoYandex
         
     }
 
-    private Vector3 GetSpawnPosition()
+    public void Upgrade(string key)
     {
-        var randomValue = Random.Range(0, _spawnpoints.Count - 1);
-        if (randomValue >= _lastSpawnpoint) randomValue++;
+        var entity = GetEntity(key);
+        if (!entity.LevelData.CanUpgrade()) return;
+        _player.Wallet.TryRemoveMoney(entity.GetUpgradePrice());
 
-        return _spawnpoints[randomValue].position;
-    }
+        var index = EntityUtil.GetSaveIndex(key);
+        YandexGame.savesData.entities[index].Cards -= entity.LevelData.LevelCardsAmount();
+        YandexGame.savesData.entities[index].Level++;
+        YandexGame.SaveProgress();
 
-    private void OnChestOpened(EntityData data, int amount)
-    {
-        AddCards(data.Key, amount);
+        OnLevelUpgraded?.Invoke(key);
     }
     
     public Entity GetEntity(string key)

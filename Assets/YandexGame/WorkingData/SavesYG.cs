@@ -50,5 +50,15 @@ namespace YG
         {
             Key = key;
         }
+
+        public bool CanUpgrade()
+        {
+            return Cards >= LevelCardsAmount();
+        }
+
+        public int LevelCardsAmount()
+        {
+            return Level + 1;
+        }
     }
 }
