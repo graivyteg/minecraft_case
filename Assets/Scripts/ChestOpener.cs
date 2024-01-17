@@ -55,7 +55,7 @@ public class ChestOpener : CustomMenu
             var viewportHalf = _viewport.rect.width / 2;
 
             var targetPosition = viewportHalf - cardSize * (cardId + normalizedCardPos);
-            _content.DOAnchorPosX(targetPosition, _openSound.length).SetEase(Ease.OutCirc).OnComplete(() =>
+            _content.DOAnchorPosX(targetPosition, _openSound.length).SetEase(Ease.OutCubic).OnComplete(() =>
             {
                 var amount = Random.Range(ChestData.MinDropAmount, ChestData.MaxDropAmount + 1);
                 OnChestOpened?.Invoke(_cards[cardId].Data, amount);

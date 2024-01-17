@@ -53,8 +53,9 @@ namespace Audio
         {
             if (_isAdPlaying) return 0;
             if (!YandexGame.SDKEnabled) return 0;
-            if (_type == AudioType.Sound && !YandexGame.savesData.isSoundOn) return 0;
-            if (_type == AudioType.Music && !YandexGame.savesData.isMusicOn) return 0;
+            
+            if (_type == AudioType.Sound) return _multiplier * YandexGame.savesData.sound;
+            if (_type == AudioType.Music) return _multiplier * YandexGame.savesData.music;
             
             return _multiplier;
         }

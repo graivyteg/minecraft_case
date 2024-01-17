@@ -57,6 +57,7 @@ public class EnemyMonster : MonoYandex
     private void Die()
     {
         YandexGame.savesData.bossesKilled++;
+        YandexGame.NewLeaderboardScores("boss_kills", YandexGame.savesData.bossesKilled);
         YandexGame.SaveProgress();
         
         _animator.SetTrigger("Die");

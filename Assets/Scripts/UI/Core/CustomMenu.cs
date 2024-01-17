@@ -10,7 +10,10 @@ namespace UI
     {
         [BoxGroup("Custom Menu")]
         [SerializeField] private float _animTime = 0.2f;
+        [BoxGroup("Custom Menu")] 
+        [SerializeField] private bool _startAction = true;
         [BoxGroup("Custom Menu")]
+        [EnableIf(nameof(_startAction))]
         [SerializeField] private bool _activeAtStart = false;
 
         public ReactiveCommand<bool> OnSwitch = new();
@@ -21,13 +24,15 @@ namespace UI
         {
             group = GetComponent<CanvasGroup>();
             
-            SetActiveDefault(_activeAtStart, false);
+            if (_startAction) SetActiveDefault(_activeAtStart, false);
         }
 
         public void SetActiveButton(bool active) => SetActive(active);
 
         protected virtual void SetActiveDefault(bool active, bool withAnimation = true)
         {
+            if (@group == null) group = GetComponent<CanvasGroup>();
+            
             isActive = active;
             Debug.Log(name);
             group.blocksRaycasts = active;

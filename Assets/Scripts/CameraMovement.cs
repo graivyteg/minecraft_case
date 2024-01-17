@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform _firstPoint;
     [SerializeField] private Transform _secondPoint;
-    
+
     [BoxGroup("Auto Movement")]
     [SerializeField] private float _autoSpeed = 0.2f;
 
@@ -18,16 +19,17 @@ public class CameraMovement : MonoBehaviour
 
     private float _normalizedPosition = 0;
     private float _manualMovementTimer = 0;
+    private int _buttonMoveValue = 0;
     private float _lerpFactor = 0.2f;
     private bool _invert = false;
-    
+
     private void Update()
     {
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        if (_buttonMoveValue == 1 || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             Move(true);
         }
-        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        else if (_buttonMoveValue == -1 || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             Move(false);
         }
@@ -55,6 +57,7 @@ public class CameraMovement : MonoBehaviour
 
     public void Move(bool right)
     {
+        _buttonMoveValue = 0;
         _manualMovementTimer = _autoDelay;
         
         var deltaNormalizedPosition = _manualSpeed * Time.deltaTime;
@@ -64,5 +67,10 @@ public class CameraMovement : MonoBehaviour
         }
         
         _normalizedPosition = Mathf.Clamp01(_normalizedPosition + deltaNormalizedPosition);
+    }
+
+    public void SetMovingButton(int value)
+    {
+        _buttonMoveValue = value;
     }
 }

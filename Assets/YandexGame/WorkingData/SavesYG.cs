@@ -19,8 +19,9 @@ namespace YG
         public int chestPrice = 0;
         public int chestsOpened = 0;
         public int bossesKilled = 0;
-        public bool isSoundOn = true;
-        public bool isMusicOn = true;// Можно задать полям значения по умолчанию
+        public float music = 0.5f;
+        public float sound = 0.5f;
+        public bool tutorialCompleted = false; // Можно задать полям значения по умолчанию
         public List<EntityLevelData> entities;
 
         public string newPlayerName = "Hello!";
