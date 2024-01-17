@@ -29,8 +29,18 @@ namespace UI
         protected override void Start()
         {
             base.Start();
+            
             _openButton.onClick.AddListener(OnOpenClick);
+        }
+
+        private void OnEnable()
+        {
             YandexGame.RewardVideoEvent += OnRewardedVideo;
+        }
+
+        private void OnDisable()
+        {
+            YandexGame.RewardVideoEvent -= OnRewardedVideo;
         }
 
         private void Update()

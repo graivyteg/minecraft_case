@@ -37,16 +37,8 @@ public class EnemyMonster : MonoYandex
         transform.localScale = Vector3.zero;
         transform.DOScale(defaultScale, 0.5f);
     }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DealDamage();
-        }
-    }
-
-    private void DealDamage()
+    
+    public void DealDamage()
     {
         if (Health <= 0) return;
         

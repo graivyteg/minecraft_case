@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29573a09951e4e85a0e239321071f03e, type: 3}
+  m_Name: Snake - Magenta
+  m_EditorClassIdentifier: 
+  Key: magenta_snake
+  Name: "\u0412\u044B\u0441\u0448\u0430\u044F \u043A\u043E\u0431\u0440\u0430"
+  Rarity: 3
+  Icon: {fileID: 21300000, guid: 361664a5d6a7943a9a00f8d0a5c69b23, type: 3}
+  DefaultDamage: 30
+  DamagePerLevel: 35
+  FirstUpgradePrice: 1000
+  Prefab: {fileID: 4785092504619256602, guid: a2fbfaadf7af34858ae85da832b41f84, type: 3}

@@ -15,11 +15,13 @@ namespace YG
 
         // Тестовые сохранения для демо сцены
         // Можно удалить этот код, но тогда удалите и демо (папка Example)
-        public int money = 1;
+        public int money = 0;
         public int chestPrice = 0;
         public int chestsOpened = 0;
-        public int bossesKilled = 0;// Можно задать полям значения по умолчанию
-        public List<EntityLevelData> entities = new();
+        public int bossesKilled = 0;
+        public bool isSoundOn = true;
+        public bool isMusicOn = true;// Можно задать полям значения по умолчанию
+        public List<EntityLevelData> entities;
 
         public string newPlayerName = "Hello!";
         public bool[] openLevels = new bool[3];
@@ -36,6 +38,9 @@ namespace YG
         {
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
+            entities = new List<EntityLevelData>();
+            entities.Add(new EntityLevelData("green_snake"));
+            entities[0].Cards = 1;
             openLevels[1] = true;
         }
     }

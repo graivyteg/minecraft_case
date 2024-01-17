@@ -1,26 +1,103 @@
 {
-    "idSave": 1692,
+    "idSave": 2798,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "money": 938,
-    "chestPrice": 9000,
-    "chestsOpened": 35,
-    "bossesKilled": 35,
+    "money": 21627,
+    "chestPrice": 82179,
+    "chestsOpened": 59,
+    "bossesKilled": 42,
+    "isSoundOn": true,
+    "isMusicOn": true,
     "entities": [
         {
-            "Key": "green_gorgon",
-            "Level": 11,
+            "Key": "green_snake",
+            "Level": 5,
+            "Cards": 1
+        },
+        {
+            "Key": "red_crow",
+            "Level": 3,
+            "Cards": 5
+        },
+        {
+            "Key": "brown_boar",
+            "Level": 4,
+            "Cards": 8
+        },
+        {
+            "Key": "purple_slime",
+            "Level": 3,
+            "Cards": 1
+        },
+        {
+            "Key": "green_slime",
+            "Level": 4,
             "Cards": 9
         },
         {
-            "Key": "purple_gorgon",
-            "Level": 6,
+            "Key": "purple_boar",
+            "Level": 3,
+            "Cards": 3
+        },
+        {
+            "Key": "purple_death",
+            "Level": 4,
             "Cards": 2
         },
         {
-            "Key": "magenta_gorgon",
+            "Key": "blue_slime",
+            "Level": 4,
+            "Cards": 6
+        },
+        {
+            "Key": "yellow_treant",
+            "Level": 2,
+            "Cards": 1
+        },
+        {
+            "Key": "purple_gorgon",
+            "Level": 5,
+            "Cards": 5
+        },
+        {
+            "Key": "grey_worm",
+            "Level": 5,
+            "Cards": 2
+        },
+        {
+            "Key": "green_gorgon",
             "Level": 3,
+            "Cards": 1
+        },
+        {
+            "Key": "purple_treant",
+            "Level": 4,
+            "Cards": 6
+        },
+        {
+            "Key": "black_boar",
+            "Level": 6,
+            "Cards": 4
+        },
+        {
+            "Key": "purple_crow",
+            "Level": 3,
+            "Cards": 1
+        },
+        {
+            "Key": "magenta_snake",
+            "Level": 3,
+            "Cards": 1
+        },
+        {
+            "Key": "yellow_worm",
+            "Level": 3,
+            "Cards": 1
+        },
+        {
+            "Key": "blue_crow",
+            "Level": 1,
             "Cards": 1
         }
     ],

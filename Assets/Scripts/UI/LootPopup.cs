@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,11 +12,13 @@ namespace UI
     {
         [Inject] private EntityManager _entityManager;
         [Inject] private CaseSettings _caseSettings;
+        [Inject] private SoundController _soundController;
 
         [SerializeField] private Transform _cardContainer;
         [SerializeField] private Button _doubleButton;
         [SerializeField] private TextMeshProUGUI _amountText;
         [SerializeField] private TextMeshProUGUI _upgradeText;
+        [SerializeField] private AudioClip _showClip;
 
         private EntityData _currentData;
         private int _currentAmount = 0;
@@ -47,6 +50,7 @@ namespace UI
         {
             _currentData = _entityManager.GetData(key);
             _currentAmount = amount;
+            _soundController.Play(_showClip);
             
             SetActive(true);
             UpdateDisplay();

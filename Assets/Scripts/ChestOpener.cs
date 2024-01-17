@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using DG.Tweening;
 using NaughtyAttributes;
 using Settings;
@@ -16,6 +17,7 @@ public class ChestOpener : CustomMenu
     [Inject] private CaseSettings _caseSettings;
     [Inject] private Player _player;
     [Inject] private EntityManager _entityManager;
+    [Inject] private SoundController _soundController;
     
     [Header("Settings")]
     public ChestData ChestData;
@@ -24,9 +26,9 @@ public class ChestOpener : CustomMenu
     [SerializeField] private RectTransform _viewport;
     [Header("Other")]
     [SerializeField] private int _cardsAmount = 40;
-    [SerializeField] private float _scrollTime = 5;
     [MinMaxSlider(0f, 1f)]
     [SerializeField] private Vector2 _dropPosition;
+    [SerializeField] private AudioClip _openSound;
 
     private List<EntityCardDisplay> _cards = new();
 
@@ -46,13 +48,14 @@ public class ChestOpener : CustomMenu
             );
             Debug.Log("Card Id " + cardId);
             
+            _soundController.Play(_openSound);
             var normalizedCardPos = Random.Range(0f, 1f);
 
             var cardSize = _content.rect.width / _content.childCount;
             var viewportHalf = _viewport.rect.width / 2;
 
             var targetPosition = viewportHalf - cardSize * (cardId + normalizedCardPos);
-            _content.DOAnchorPosX(targetPosition, _scrollTime).SetEase(Ease.OutCirc).OnComplete(() =>
+            _content.DOAnchorPosX(targetPosition, _openSound.length).SetEase(Ease.OutCirc).OnComplete(() =>
             {
                 var amount = Random.Range(ChestData.MinDropAmount, ChestData.MaxDropAmount + 1);
                 OnChestOpened?.Invoke(_cards[cardId].Data, amount);

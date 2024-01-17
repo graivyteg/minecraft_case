@@ -12,8 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c44ce122c3042bbbcc03dbc26bcc934, type: 3}
   m_Name: Chest Data
   m_EditorClassIdentifier: 
-  ClickAmount: 100
+  ClickAmount: 30
+  MinDropAmount: 1
+  MaxDropAmount: 3
   Entities:
+  - {fileID: 11400000, guid: 817065911d18e41c9abb0840670472bb, type: 2}
+  - {fileID: 11400000, guid: 070562efc2d4c415bbe9aca8eb8f09c3, type: 2}
+  - {fileID: 11400000, guid: e9198a09d014a463c9e76bd3350a16ea, type: 2}
+  - {fileID: 11400000, guid: 1b7f3133a51294b94843ea67f453cc54, type: 2}
+  - {fileID: 11400000, guid: fb7124e060711422c86d2217e89c2512, type: 2}
+  - {fileID: 11400000, guid: 94da4dec1e74e4cb99dc8cb1bf1f4a03, type: 2}
+  - {fileID: 11400000, guid: 1ad6748e996794d3db5dca1a8ddb31d8, type: 2}
+  - {fileID: 11400000, guid: 68bbe2ef184384f3bb5563e157d4e403, type: 2}
+  - {fileID: 11400000, guid: 067f215a75f6f47c8b061e768f4b38aa, type: 2}
   - {fileID: 11400000, guid: 8c1b03c279a664754b5587620892f7cb, type: 2}
   - {fileID: 11400000, guid: 1211334f8884f4ae6888772bf64b2d00, type: 2}
   - {fileID: 11400000, guid: 75667e1298a9a46d384e927e55eca092, type: 2}
+  - {fileID: 11400000, guid: a9280ac3bd8554e919529ccfdc7cedbf, type: 2}
+  - {fileID: 11400000, guid: 986efd9d176154fb0a8ed21e82aa7efa, type: 2}
+  - {fileID: 11400000, guid: d4c1545ee19bc440c8f3837f4214c853, type: 2}
+  - {fileID: 11400000, guid: 075dc0dff379e4323b1806d23c9d2023, type: 2}
+  - {fileID: 11400000, guid: d4504a00d21834dda83f7a35dc479b2a, type: 2}
+  - {fileID: 11400000, guid: a78645a9171754669b90614d9b708a68, type: 2}
+  - {fileID: 11400000, guid: 50cfad9bd94d64074be6f80684bbb826, type: 2}
+  - {fileID: 11400000, guid: da772e44cfb094ac095c6ea177f5f1b7, type: 2}
+  - {fileID: 11400000, guid: 998685ca996554590aa760e968a04b0d, type: 2}
+  - {fileID: 11400000, guid: c229016d7906c43dc897a5594536d8b4, type: 2}
+  - {fileID: 11400000, guid: cf86200ceed8d4899b7fc34a2d675f4e, type: 2}
+  - {fileID: 11400000, guid: ca4bf65c249fe46fd92802af2a51a4cd, type: 2}

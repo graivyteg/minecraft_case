@@ -29,6 +29,7 @@ namespace UI
         protected virtual void SetActiveDefault(bool active, bool withAnimation = true)
         {
             isActive = active;
+            Debug.Log(name);
             group.blocksRaycasts = active;
             if (withAnimation)
             {

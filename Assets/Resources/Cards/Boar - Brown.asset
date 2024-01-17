@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29573a09951e4e85a0e239321071f03e, type: 3}
+  m_Name: Boar - Brown
+  m_EditorClassIdentifier: 
+  Key: brown_boar
+  Name: "\u041A\u0430\u0431\u0430\u043D"
+  Rarity: 0
+  Icon: {fileID: 21300000, guid: 513c877e0a5944e7783553ccd554b47e, type: 3}
+  DefaultDamage: 2
+  DamagePerLevel: 1
+  FirstUpgradePrice: 100
+  Prefab: {fileID: 1650099214190258912, guid: f887a4cb52fdf40579be8354d88460b0, type: 3}

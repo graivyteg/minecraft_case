@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,7 @@ namespace UI
         [Inject] private Player _player;
         [Inject] private CaseSettings _caseSettings;
         [Inject] private EntityManager _entityManager;
+        [Inject] private SoundController _soundController;
         
         [SerializeField] private Transform _cardContainer;
         [SerializeField] private TextMeshProUGUI _damageText;
@@ -19,6 +21,8 @@ namespace UI
 
         [SerializeField] private Button _upgradeButton;
         [SerializeField] private TextMeshProUGUI _upgradeButtonText;
+        [SerializeField] private AudioClip _showSound;
+        [SerializeField] private AudioClip _upgradeSound;
 
         private Entity _entity;
 
@@ -41,6 +45,7 @@ namespace UI
         public void Show(Entity entity)
         {
             SetActive(true);
+            _soundController.Play(_showSound);
             _entity = entity;
             UpdateDisplay();
         }
@@ -79,6 +84,7 @@ namespace UI
 
         private void Upgrade()
         {
+            _soundController.Play(_upgradeSound);
             _entityManager.Upgrade(_entity.Data.Key);
         }
     }

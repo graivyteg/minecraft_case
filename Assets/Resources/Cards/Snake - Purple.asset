@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29573a09951e4e85a0e239321071f03e, type: 3}
+  m_Name: Snake - Purple
+  m_EditorClassIdentifier: 
+  Key: purple_snake
+  Name: "\u0422\u0430\u0438\u043D\u0441\u0442\u0432\u0435\u043D\u043D\u0430\u044F
+    \u0437\u043C\u0435\u044F"
+  Rarity: 2
+  Icon: {fileID: 21300000, guid: ad40fe9c42b804180be6b1e7738d14c0, type: 3}
+  DefaultDamage: 8
+  DamagePerLevel: 11
+  FirstUpgradePrice: 500
+  Prefab: {fileID: 730715676968806121, guid: 4fb80f583733340babc504d6336a551c, type: 3}

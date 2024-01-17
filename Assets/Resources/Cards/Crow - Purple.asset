@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29573a09951e4e85a0e239321071f03e, type: 3}
+  m_Name: Crow - Purple
+  m_EditorClassIdentifier: 
+  Key: purple_crow
+  Name: "\u0412\u043E\u0440\u043E\u043D"
+  Rarity: 0
+  Icon: {fileID: 21300000, guid: 48fbb778312914a90b4311ac6e8e265b, type: 3}
+  DefaultDamage: 1
+  DamagePerLevel: 1
+  FirstUpgradePrice: 100
+  Prefab: {fileID: 7686163346528604838, guid: b982c181d53704bf6846377cd8bd02f4, type: 3}

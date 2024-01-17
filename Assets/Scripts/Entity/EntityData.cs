@@ -11,6 +11,7 @@ public class EntityData : ScriptableObject
     [BoxGroup("General")]
     public Rarity Rarity;
     [BoxGroup("General")]
+    [ShowAssetPreview(256, 256)]
     public Sprite Icon;
 
     [BoxGroup("Characteristics")] 

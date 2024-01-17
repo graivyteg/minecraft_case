@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29573a09951e4e85a0e239321071f03e, type: 3}
+  m_Name: Gorgon - Green
+  m_EditorClassIdentifier: 
+  Key: green_gorgon
+  Name: "\u0417\u0435\u043B\u0435\u043D\u0430\u044F \u0433\u043E\u0440\u0433\u043E\u043D\u0430"
+  Rarity: 0
+  Icon: {fileID: 21300000, guid: 88758ee4a24634c95ac4488afe239cbd, type: 3}
+  DefaultDamage: 3
+  DamagePerLevel: 3
+  FirstUpgradePrice: 100
+  Prefab: {fileID: 3415293559920132923, guid: 08370762aacbf47ca92689681f8b163e, type: 3}
