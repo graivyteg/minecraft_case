@@ -11,7 +11,6 @@ using Random = UnityEngine.Random;
 public class EntityManager : MonoYandex
 {
     [Inject] private Player _player;
-    [Inject] private ChestOpener _chestOpener;
 
     [BoxGroup("Scene Dependent Settings")] 
     [SerializeField] private bool _addInfoButton;
@@ -21,12 +20,16 @@ public class EntityManager : MonoYandex
     [BoxGroup("Scene Dependent Settings")] 
     [EnableIf(nameof(_addInfoButton))] 
     [SerializeField] private EntityInfoPopup _infoPopup;
+    [BoxGroup("Scene Dependent Settings")]
+    [SerializeField] private ChestOpener _chestOpener;
     
     [SerializeField] private List<Transform> _spawnpoints;
     
     private int _lastSpawnpoint = 0;
     private List<EntityData> _entityDatas;
     private List<Entity> _entities = new();
+
+    private float _damageMultiplier = 1;
 
     public Action<string, int> OnCardsAdded;
     public Action<string> OnLevelUpgraded;
@@ -39,13 +42,13 @@ public class EntityManager : MonoYandex
     protected override void OnEnable()
     {
         base.OnEnable();
-        _chestOpener.OnChestOpened += OnChestOpened;
+        if (_chestOpener != null) _chestOpener.OnChestOpened += OnChestOpened;
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        _chestOpener.OnChestOpened -= OnChestOpened;
+        if (_chestOpener != null) _chestOpener.OnChestOpened -= OnChestOpened;
     }
 
     protected override void OnSDK()
@@ -115,6 +118,22 @@ public class EntityManager : MonoYandex
         YandexGame.SaveProgress();
 
         OnLevelUpgraded?.Invoke(key);
+    }
+
+    public int GetSummaryDamage()
+    {
+        var result = 0;
+        foreach (var entity in _entities)
+        {
+            result += entity.GetDamage();
+        }
+
+        return Mathf.RoundToInt(result * _damageMultiplier);
+    }
+
+    public void SetDamageMultiplier(float multiplier)
+    {
+        _damageMultiplier = multiplier;
     }
     
     public Entity GetEntity(string key)

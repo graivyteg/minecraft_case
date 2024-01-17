@@ -15,7 +15,7 @@ public class ChestOpener : CustomMenu
 {
     [Inject] private CaseSettings _caseSettings;
     [Inject] private Player _player;
-    [Inject] private EntityManager _manager;
+    [Inject] private EntityManager _entityManager;
     
     [Header("Settings")]
     public ChestData ChestData;
@@ -111,7 +111,7 @@ public class ChestOpener : CustomMenu
     
     private void UpdateChestPrice()
     {
-        var newPrice = Mathf.RoundToInt(_player.GetPower() * ChestData.ClickAmount * (1 + YandexGame.savesData.chestsOpened * 0.1f));
+        var newPrice = Mathf.RoundToInt( _entityManager.GetSummaryDamage() * ChestData.ClickAmount * (1 + YandexGame.savesData.chestsOpened * 0.1f));
         YandexGame.savesData.chestPrice = newPrice;
         YandexGame.SaveProgress();
     }

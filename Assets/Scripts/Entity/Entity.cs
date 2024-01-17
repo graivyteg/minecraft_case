@@ -63,7 +63,7 @@ public class Entity : MonoBehaviour
             IsMoving = false;
             Observable.Timer(TimeSpan.FromSeconds(_idleTime)).Subscribe(_ =>
             {
-                StartCoroutine(CalculateMovePoint());
+                if (this != null) StartCoroutine(CalculateMovePoint());
             });
         }
     }

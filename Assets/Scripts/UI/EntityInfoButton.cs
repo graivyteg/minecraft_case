@@ -9,6 +9,7 @@ namespace UI
     {
         [SerializeField] private Image _icon;
         [SerializeField] private Button _button;
+        [SerializeField] private Image _upgradeAvailable;
         
         private EntityInfoPopup _popup;
         private Entity _entity;
@@ -30,6 +31,8 @@ namespace UI
         protected void Update()
         {
             transform.LookAt(Camera.main.transform);
+
+            _upgradeAvailable.gameObject.SetActive(_entity.LevelData.CanUpgrade());
         }
 
         protected void OnClick()

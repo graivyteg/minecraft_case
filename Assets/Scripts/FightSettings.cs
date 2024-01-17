@@ -7,4 +7,5 @@ public class FightSettings : ScriptableObject
 {
     [Tooltip("На сколько умножается урон при вычислении здоровья босса")]
     public int HealthByDamageMultiplier = 250;
+    public float HealthByBossNumberMultiplier = 0.2f;
 }

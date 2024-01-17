@@ -17,7 +17,8 @@ namespace YG
         // Можно удалить этот код, но тогда удалите и демо (папка Example)
         public int money = 1;
         public int chestPrice = 0;
-        public int chestsOpened = 0; // Можно задать полям значения по умолчанию
+        public int chestsOpened = 0;
+        public int bossesKilled = 0;// Можно задать полям значения по умолчанию
         public List<EntityLevelData> entities = new();
 
         public string newPlayerName = "Hello!";
