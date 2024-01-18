@@ -1,12 +1,12 @@
 {
-    "idSave": 3142,
+    "idSave": 3279,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "money": 12315,
-    "chestPrice": 102720,
-    "chestsOpened": 70,
-    "bossesKilled": 44,
+    "money": 67914,
+    "chestPrice": 106026,
+    "chestsOpened": 72,
+    "bossesKilled": 45,
     "music": 0.0,
     "sound": 0.8225827813148499,
     "tutorialCompleted": true,
@@ -24,7 +24,7 @@
         {
             "Key": "brown_boar",
             "Level": 5,
-            "Cards": 3
+            "Cards": 5
         },
         {
             "Key": "purple_slime",
@@ -49,7 +49,7 @@
         {
             "Key": "blue_slime",
             "Level": 5,
-            "Cards": 1
+            "Cards": 3
         },
         {
             "Key": "yellow_treant",
